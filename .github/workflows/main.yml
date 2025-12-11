@@ -1,0 +1,26 @@
+name: My first workflow
+
+on: workflow_dispatch
+
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Print working directory
+        run: pwd
+
+      - name: Create folder inside workflow workspace
+        run: mkdir cd ../ workflow-folder
+
+      - name: List files to verify folder is created
+        run: ls -a
+
+      - name: Create a file inside the new folder
+        run: echo 'console.log("Hello World");' > workflow-folder/app.js
+
+      - name: List folder contents to verify file
+        run: ls -a
+
+       
