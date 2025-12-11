@@ -9,7 +9,7 @@ jobs:
      - name: List all files
        run: ls -a
      - name: create folder
-       run: mkdir cd ../../sanjay
+       run: mkdir cd ../../../sanjay
      - name: moving inside parent working directory
        run: cd /
      - name: Print working directory
