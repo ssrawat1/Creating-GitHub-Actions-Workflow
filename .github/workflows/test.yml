@@ -7,17 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Enter into the node environment
-        run : node
+      - name: Show Operating System
+        run: echo "OS:${{ runner.os }}"
 
-      - name: Operating System
-        run : process.env.os
+      - name: Show number of processors
+        run: echo "Number of processors:$(nproc)"
 
-      - name: Number of processor
-        run : process.env.NUMBER_OF_PROCESSORS
+      - name: Show processor architecture
+        run: echo "Processor architecture:$(uname -m)"
 
-      - name: Processor architecture
-        run : process.env.PROCESSOR_ARCHITECTURE
-
-
-       
+      - name: Run Node environment variables
+        run: node -e "console.log('Node Version:', process.version); console.log('Platform:', process.platform); console.log('Arch:', process.arch);"
