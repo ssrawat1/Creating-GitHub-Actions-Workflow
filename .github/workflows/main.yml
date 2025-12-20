@@ -1,0 +1,23 @@
+name: My first workflow
+
+on: workflow_dispatch
+
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enter into the node environment
+        run : node
+
+      - name: Operating System
+        run : process.env.os
+
+      - name: Number of processor
+        run : process.env.NUMBER_OF_PROCESSORS
+
+      - name: Processor architecture
+        run : process.env.PROCESSOR_ARCHITECTURE
+
+
+       
