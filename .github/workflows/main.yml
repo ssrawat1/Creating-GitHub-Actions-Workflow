@@ -7,17 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print system info
-        run: echo "System Information"
+      - name: Parent Working Directory
+        run: pwd
 
-      - name: Operating System
-        run: uname -s   
+      - name: List Paths
+        run: ls -a  
 
-      - name: Number of processors
-        run: nproc  
+      - name: Node version
+        run: node -v  
 
-      - name: Processor architecture
-        run: uname -m  
-
-      - name: All system info
-        run: uname -a   
+       
