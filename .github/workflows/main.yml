@@ -1,18 +1,27 @@
 name: My first workflow
 
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 
 jobs:
   my-first-job:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Running Scripts
-      run: |
-       pwd
-       ls -a
-       node -v  
+      - name: Running Scripts
+        run: |
+          pwd
+          ls -a
+          node -v
 
-    
+  my-second-job:
+    runs-on: ubuntu-latest
 
-       
+    steps:
+      - name: Get all system info
+        run: |
+          lsb_release -a
+          uname -r
+          lscpu
+          nproc
+          free -h
+          lsblk
