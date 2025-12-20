@@ -7,14 +7,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Enter into the node environment
-        run : node
+      - name: Print system info
+        run: echo "System Information"
 
       - name: Operating System
-        run : process.env.OS
+        run: uname -s   
 
-      - name: Number of processor
-        run : process.env.NUMBER_OF_PROCESSORS
+      - name: Number of processors
+        run: nproc  
 
       - name: Processor architecture
-        run : process.env.PROCESSOR_ARCHITECTURE
+        run: uname -m  
+
+      - name: All system info
+        run: uname -a   
